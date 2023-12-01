@@ -1,3 +1,11 @@
+/*
+THINGS TO ADD/FIX
+-----------------
+1. Make delete button not type "nan" when deleteing
+2.
+-----------------
+*/
+
 //set game set up
 let userIMP;
 let userValid;
@@ -16,6 +24,10 @@ if (age <= 14) {
     document.getElementById("funnyLog").innerHTML = "YOU ARE TOO YOUNG!";
     userValid = false;
 
+} else if (age > 35) {
+    document.getElementById("funnyLog").innerHTML = "MR SMITH AGE";
+    userValid = false
+
 } else {
     document.getElementById("funnyLog").innerHTML = "Welcome " + age + " year old.";
     userValid = true;
@@ -29,11 +41,15 @@ if (userValid) {
     document.getElementById("button").onclick = function () {
 
         userIMP = document.getElementById("awnser").value;
-        console.log("worked");
+        console.log("worked.");
         //document.getElementById("gameText").innerHTML = userIMP;
         document.getElementById('printed').innerHTML += "<h1>"+userIMP+"</h1>";
     }
-
+    //make a delete button.
+    document.getElementById("delete").onclick = function () {
+        console.log("Deleteing awnser...");
+        document.getElementById('printed').innerHTML -= "<h1>"+userIMP+"</h1>";
+    }
 // hides button if 14 or under
 } else {
 
